@@ -7,7 +7,7 @@ require "open3"
 
 VERSION = /(\d+(\.\d+))/
 OCAML_VERSION = "4.11"
-OPAM_VERSION = "2.0"
+OPAM_VERSION = "2.1"
 
 #
 # Required Packages

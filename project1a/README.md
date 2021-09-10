@@ -38,7 +38,7 @@ The left-hand side of the arrow specifies the parameter types, and the right-han
 # Part 1 (Warm-up)
 Implement part 1 in `warmup.rb`. Each of the methods you must implement are described below. We provide you with the signature of each method and a description of its required behavior. For some methods, we state assumptions that you can make about the input. In these cases, it doesn't matter what your code does if the assumption isn't met, since we will never run a test case that contradicts the assumption.
 
-#### `fib(n)`
+#### `fib(n)` 
 - **Description**: Returns the first `n` [fibonacci numbers](https://www.mathsisfun.com/numbers/fibonacci-sequence.html#:~:text=Here%20is%20a%20longer%20list,196418%2C%20317811%2C%20...).
 - **Type**: `(Integer) -> Array`
 - **Assumptions**: `n` is non-negative.
