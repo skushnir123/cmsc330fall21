@@ -3,36 +3,46 @@
 # The class Table represents a collection of tuples.
 
 class Tuple
-
-    # data is an array of values for the tuple
+    @@totalTuples = {}
+    # data is an array of values for the tuple 
     def initialize(data)
-        raise "unimplemented"
+        @data = data
+        if @@totalTuples.key?(data.length)
+            @@totalTuples[data.length]+=1
+        else
+            @@totalTuples[data.length] = 1
+        end
     end
 
     # This method returns the number of entries in this tuple
     def getSize()
-        raise "unimplemented"
+        return @data.length
     end
 
     # This method returns the data at a particular index of a tuple (0 indexing)
     # If the provided index exceeds the largest index in the tuple, nil should be returned.
     # index is an Integer representing a valid index in the tuple.
     def getData(index)
-        raise "unimplemented"
+        return @data[index]
     end
 
     # This method should return the number of tuples of size n that have ever been created
     # hint: you should use a static variable
     # hint2: a hash can be helpful (though not strictly necessary!)
     def self.getNumTuples(n) 
-        raise "unimplemented"
+        if @@totalTuples.key?(n)
+            return @@totalTuples[n]
+        else
+            return 0
+        end
     end
 end
 
 class Table
     # column_names is an Array of Strings
     def initialize(column_names)
-        raise "unimplemented"
+        @table_columns = column_names
+        @table = []
     end
 
     # This method inserts a tuple into the table.
@@ -42,12 +52,17 @@ class Table
     # otherwise, DO NOT insert the tuple and return false instead.
     # tuple is an instance of class Tuple declared above.
     def insertTuple(tuple)
-        raise "unimplemented"
+        if tuple.getSize() != @table_columns.length
+            return false
+        end
+
+        @table.append(tuple)
+        return true
     end
     
     # This method returns the number of tuples in the table
     def getSize
-        raise "unimplemented"
+        return @table.length
     end
 
     # This method selects columns from the table, equivalent to a SQL `select column_names from table` query.
@@ -70,12 +85,27 @@ class Table
     #     4     |     2    
     # Notice that we NOW have a table of 2-element tuples
     # hint: to find the index of an element in an array, you can use arr.index(element)
-    def selectTuples(column_names)
-        raise "unimplemented"
+    def selectTuples(column_names) 
+        table = Table.new(column_names)
+        indexes = []
+        for i in 0...column_names.length
+            indexes.append(@table_columns.index(column_names[i]))
+        end
+        i = 0
+        for i in 0...@table.length
+            tupleToAdd = []
+            for j in 0...@table[i].getSize
+                if indexes.index(j) != nil
+                    tupleToAdd.append(@table[i].getData(j))
+                end
+            end
+            table.insertTuple(Tuple.new(tupleToAdd))
+        end
+        return table
     end
 
     # This should return an array of the tuples present in the table
     def getTuples()
-        raise "unimplemented"
+        return @table
     end
 end

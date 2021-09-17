@@ -94,7 +94,7 @@ class PublicTests < MiniTest::Test
         pos0 = Position.new(2,1)
         pos1 = Position.new(2,2)
         pos2 = Position.new(2,3)
-        pos3 = Position.new(2,4)
+        pos3 = Position.new(2,4) 
 
         # Property: A structure read from a valid file and has the ships attacked 
         #           will register the attack and return the values according to guidelines
@@ -102,7 +102,7 @@ class PublicTests < MiniTest::Test
         ret = p1_brd.attack_pos(pos2) && ret
         ret = p1_brd.attack_pos(pos3) && ret
 
-        p1_brd.attack_pos(pos0)
+        p1_brd.to_s
         assert(ret, "A boat is expected to be attacked but is not")
         assert_equal(3, p1_brd.num_successful_attacks, "The number of hits needs to be correct")
     end
@@ -133,7 +133,7 @@ class PublicTests < MiniTest::Test
         refute(board_p1.all_sunk?, "P2 should not have sunk all P1 Boats")
     end
 
-    def test_public_test_failure
+    def test_public_test_failure 
         refute(read_ships_file(BAD_SHIPS), "#{BAD_SHIPS} Should Not read correctly")
     end
 end
