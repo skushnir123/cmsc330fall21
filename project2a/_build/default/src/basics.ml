@@ -1,3 +1,7 @@
+(***********************************)
+(* Part 1: Non-Recursive Functions *)
+(***********************************)
+
 let rev_tup tup = match tup with
 | (a,b,c) -> (c,b,a)
 
@@ -6,10 +10,10 @@ let is_odd x = match x mod 2 with
   | _ -> true
 
 let area x y = match x,y with
-| (x1, y1), (x2, y2) -> abs ((x2-x1) * (y2-y1))
+| (x1, y1), (x2, y2) -> (x2-x1) * (y2-y1)
 
 let volume x y = match x,y with
-| (x1, y1,z1), (x2, y2,z2) -> abs ((x2-x1) * (y2-y1) * (z2-z1))
+| (x1, y1,z1), (x2, y2,z2) -> (x2-x1) * (y2-y1) * (z2-z1)
 
 (*******************************)
 (* Part 2: Recursive Functions *)
@@ -40,7 +44,7 @@ let rec is_prime_aux x d =
   else is_prime_aux x (d+1)
 
 let rec is_prime x = 
-  if x < 2 then false
+  if x < 3 then false
   else is_prime_aux x 2
 
 (*****************)
@@ -53,32 +57,35 @@ let rec get idx lst = match lst with
       if idx = 0 then h
       else get (idx-1) t
 
-let rec get_for_larger idx lst = match lst with
+
+let rec get2 idx lst = match lst with
   | [] -> -1
   | h::t ->
       if idx = 0 then 1
-      else get_for_larger (idx-1) t
+      else get2 (idx-1) t
 
-let rec larger_aux lst1 lst2 idx = match get_for_larger idx lst1, get_for_larger idx lst2 with
+let rec larger_aux lst1 lst2 idx = match get2 idx lst1, get2 idx lst2 with
   | -1, -1 -> []
   | -1, 1 -> lst2
   | 1, -1 -> lst1
-  | 1, 1 -> larger_aux lst1 lst2 (idx+1)
-  | _, _ -> larger_aux lst1 lst2 (idx+1)
-
+  | 1, 1 -> larger_aux lst1 lst2 (idx+1) 
+              
               
 let rec larger lst1 lst2 = larger_aux lst1 lst2 0
+
+let rec combine_for_reverse lst1 lst2 = match lst1 with
+  | [] -> lst2
+  | h::t -> h::combine_for_reverse t lst2
+
+let rec reverse_helper lst = match lst with
+| [] -> []
+| h::t -> combine_for_reverse (reverse_helper t) [h]
+
+let reverse lst = reverse_helper lst
 
 let rec combine lst1 lst2 = match lst1 with
   | [] -> lst2
   | h::t -> h::combine t lst2
-
-
-let rec reverse_helper lst = match lst with
-| [] -> []
-| h::t -> combine (reverse_helper t) [h]
-
-let reverse lst = reverse_helper lst
 
 let rec merge lst1 lst2 = match lst1, lst2 with
   | [],[] -> []
@@ -92,7 +99,6 @@ let rec rotate shift lst = match lst with
   | h::t -> 
       if shift = 0 then lst
       else rotate (shift-1) (combine t [h])
-  | []-> []
 
 let rec check_string_equality lst1 lst2 = match lst1, lst2 with
   | [], [] -> true
