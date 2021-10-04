@@ -15,11 +15,16 @@ let rec foldr f xs a = match xs with
 (* Currying Functions and Partial Application *)
 (********************)
 
-let mul_n n lst = failwith "unimplemented"
+let mul_n n lst = map (fun x -> x*n) lst
 
 (* Joins together the strings in xs by separator sep
    e.g. join ["cat"; "dog"; "fish"] "," = "cat,dog,fish". *)
-let join xs sep = failwith "unimplemented"
+
+let join_aux sep = fun a x -> match a with
+| "" -> x
+| _ -> a ^ sep ^ x
+
+let join xs sep = foldl (join_aux sep) "" xs
 
 (********************)
 (* Option Functions *)
@@ -27,11 +32,16 @@ let join xs sep = failwith "unimplemented"
 
 (* Converts an option to a list. Some is a singleton containing
    the value, while None is an empty list. *)
-let list_of_option (o : 'a option) : 'a list = failwith "unimplemented"
+let list_of_option (o : 'a option) : 'a list = match o with
+  | None -> []
+  | Some x -> [x]
 
 (* If the pair's key matches k returns the value as an option. Otherwise
    return None. *)
-let match_key (k : 'k) (p : ('k * 'v)) : 'v option = failwith "unimplemented"
+let match_key (k : 'k) (p : ('k * 'v)) : 'v option = match p with
+  | (a,b) ->
+      if k = a then Some b
+      else None
 
 (******************)
 (*LENGTHLIST FUNCTIONS*)
@@ -46,8 +56,19 @@ type 'a lengthlist =
     | Empty
 ;;
 
-let rec list_of_lengthlist llst = failwith "unimplemented"
+let rec len_help ele num = 
+   if num = 0 then [] else ele::(len_help ele (num-1));;
 
-let rec map_lengthlist fn llst = failwith "unimplemented"
+let rec list_of_lengthlist llst = 
+   match llst with
+   | Empty -> []
+   | Cons(a', num, tail) -> (len_help a' num) @ list_of_lengthlist tail;;
 
-let rec decrement_count llst = failwith "unimplemented"
+let rec map_lengthlist fn llst = match llst with
+  | Empty -> Empty
+  | Cons(a, num, tail) -> Cons(fn a, num, (map_lengthlist fn tail))
+
+let rec decrement_count llst = 
+   match llst with
+   | Empty -> Empty
+   | Cons(a', num, tail) -> if num = 1 then decrement_count tail else Cons(a', (num-1), (decrement_count tail));;
