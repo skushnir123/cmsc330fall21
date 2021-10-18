@@ -1,0 +1,18 @@
+2021-10-04T03:55:51+00:00 Samuels-MacBook-Pro.local#01 I: Start test public:0:is_elem.
+2021-10-04T03:55:51+00:00 Samuels-MacBook-Pro.local#01 I: Test public:0:is_elem is successful.
+2021-10-04T03:55:51+00:00 Samuels-MacBook-Pro.local#01 I: End test public:0:is_elem.
+2021-10-04T03:55:51+00:00 Samuels-MacBook-Pro.local#01 I: Start test public:2:count_occ.
+2021-10-04T03:55:51+00:00 Samuels-MacBook-Pro.local#01 I: Test public:2:count_occ is successful.
+2021-10-04T03:55:51+00:00 Samuels-MacBook-Pro.local#01 I: End test public:2:count_occ.
+2021-10-04T03:55:51+00:00 Samuels-MacBook-Pro.local#01 I: Start test public:5:ap.
+2021-10-04T03:55:51+00:00 Samuels-MacBook-Pro.local#01 I: Test public:5:ap is successful.
+2021-10-04T03:55:51+00:00 Samuels-MacBook-Pro.local#01 I: End test public:5:ap.
+2021-10-04T03:55:51+00:00 Samuels-MacBook-Pro.local#01 I: Start test public:7:int_tree_insert_and_mem.
+2021-10-04T03:55:51+00:00 Samuels-MacBook-Pro.local#01 I: Test public:7:int_tree_insert_and_mem is successful.
+2021-10-04T03:55:51+00:00 Samuels-MacBook-Pro.local#01 I: End test public:7:int_tree_insert_and_mem.
+2021-10-04T03:55:51+00:00 Samuels-MacBook-Pro.local#01 I: Start test public:9:tree_map_put_and_get.
+2021-10-04T03:55:51+00:00 Samuels-MacBook-Pro.local#01 I: Test public:9:tree_map_put_and_get is successful.
+2021-10-04T03:55:51+00:00 Samuels-MacBook-Pro.local#01 I: End test public:9:tree_map_put_and_get.
+2021-10-04T03:55:51+00:00 Samuels-MacBook-Pro.local#01 I: Start test public:10:var.
+2021-10-04T03:55:51+00:00 Samuels-MacBook-Pro.local#01 I: Test public:10:var is successful.
+2021-10-04T03:55:51+00:00 Samuels-MacBook-Pro.local#01 I: End test public:10:var.

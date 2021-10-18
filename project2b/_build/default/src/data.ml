@@ -33,12 +33,12 @@ let rec int_insert x t = match t with
   | IntLeaf -> IntNode(x, None, IntLeaf, IntLeaf, IntLeaf)
   | IntNode(x1, None, l, m, r) ->
       if x1 < x then IntNode(x1, Some x, l, m, r)
-      else if x1 > x then IntNode(x1, Some x, l, m, r)
+      else if x1 > x then IntNode(x, Some x1, l, m, r)
       else t
   | IntNode(x1, Some x2, l,m,r) ->
-      if x < x1 then int_insert x l
-      else if x > x1 && x < x2 then int_insert x m
-      else if x > x2 then int_insert x r
+      if x < x1 then IntNode(x1, Some x2, int_insert x l, m, r )
+      else if x > x1 && x < x2 then IntNode(x1, Some x2, l, int_insert x m, r )
+      else if x > x2 then IntNode(x1, Some x2, l, m, int_insert x r)
       else t
 
 
@@ -81,12 +81,12 @@ let rec map_put k v t = match t with
   | MapNode((k1,v1), None, l, m, r) ->
       if k < k1 then MapNode((k,v), Some (k1,v1), l, m, r)
       else if k > k1 then MapNode((k1,v1), Some (k,v), l, m, r)
-      else failwith "hey"
+      else invalid_arg "map_put"
   | MapNode((k1,v1), Some (k2, v2), l, m, r) ->
-      if k < k1 then map_put k v l
-      else if k > k1 && k < k2 then map_put k v m
-      else if k > k2 then map_put k v r
-      else failwith "hey"
+      if k < k1 then MapNode((k1,v1), Some (k2, v2), map_put k v l, m, r)
+      else if k > k1 && k < k2 then MapNode((k1,v1), Some (k2, v2), l, map_put k v m, r)
+      else if k > k2 then MapNode((k1,v1), Some (k2, v2), l, m, map_put k v r)
+      else invalid_arg "map_put"
 
 let rec map_contains k t = match t with
 | MapLeaf -> false
@@ -107,9 +107,9 @@ let rec map_get k t = match t with
 | MapNode((k1,v1), Some (k2, v2), l, m, r) ->
   if k = k1 then v1
   else if k = k2 then v2
-  else if k < k1 then map_contains k l
-  else if k > k1 && k < k2 then map_contains k m
-  else map_contains k r
+  else if k < k1 then map_get k l
+  else if k > k1 && k < k2 then map_get k m
+  else map_get k r
   
 
 (***************************)
