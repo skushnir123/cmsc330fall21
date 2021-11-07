@@ -26,8 +26,60 @@ let fresh =
 (* Part 3: Regular Expressions *)
 (*******************************)
 
-let regexp_to_nfa (regexp: regexp_t) : (int, char) nfa_t =
-  failwith "unimplemented"
+let rec regexp_to_nfa (regexp: regexp_t) : (int, char) nfa_t = match regexp with
+  | Empty_String ->
+      let firstState = fresh () in
+      let secondState = fresh () in
+      let m1 =
+        {qs= [firstState; secondState]; sigma= []; delta= [(firstState, None, secondState)]; q0= firstState; fs= [secondState]}
+      in
+      m1
+  | Char c ->
+      let firstState = fresh () in
+      let secondState = fresh () in
+      let m1 =
+        {qs= [firstState; secondState]; sigma= [c]; delta= [(firstState, Some c, secondState)]; q0= firstState; fs= [secondState]}
+      in
+      m1
+  | Union (reg1, reg2) ->
+      let firstState = fresh () in
+      let secondState = fresh () in
+      let reg1NFA = regexp_to_nfa reg1 in
+      let reg2NFA = regexp_to_nfa reg2 in
+      let newQS = firstState::secondState::(reg1NFA.qs @ reg2NFA.qs) in
+      let newSigma = (reg1NFA.sigma @ reg2NFA.sigma) in
+      let newreg1Delta = map ((fun x -> (x, None, secondState))) reg1NFA.fs in
+      let newreg2Delta = map (fun x -> (x, None, secondState)) reg2NFA.fs in
+      let newDelta = (firstState, None, reg1NFA.q0)::(firstState, None, reg2NFA.q0)::(reg1NFA.delta @ reg2NFA.delta @ newreg1Delta @ newreg2Delta) in
+      let m1 =
+        {qs= newQS; sigma= newSigma; delta=newDelta; q0= firstState; fs= [secondState]}
+      in
+      m1
+  | Concat (reg1, reg2) ->
+      let reg1NFA = regexp_to_nfa reg1 in
+      let reg2NFA = regexp_to_nfa reg2 in
+      let newQS = (reg1NFA.qs @ reg2NFA.qs) in
+      let newSigma = (reg1NFA.sigma @ reg2NFA.sigma) in
+      let newreg1Delta = map (fun x -> (x, None, reg2NFA.q0)) reg1NFA.fs in
+      let newDelta = reg1NFA.delta @ reg2NFA.delta @ newreg1Delta in
+      let m1 =
+        {qs= newQS; sigma= newSigma; delta=newDelta; q0=reg1NFA.q0; fs= reg2NFA.fs}
+      in
+      m1
+  | Star reg1 ->
+      let firstState = fresh () in
+      let secondState = fresh () in
+      let reg1NFA = regexp_to_nfa reg1 in
+      let newQS = firstState::secondState::(reg1NFA.qs) in
+      let newreg1Delta = map (fun x -> (x, None, secondState)) reg1NFA.fs in
+      let newDelta = (firstState, None, reg1NFA.q0)::(firstState, None, secondState)::(secondState, None, firstState)::(newreg1Delta@reg1NFA.delta) in
+      let m1 =
+        {qs= newQS; sigma= reg1NFA.sigma; delta=newDelta; q0=firstState; fs= [secondState]}
+      in
+      m1
+
+
+  
 
 (*****************************************************************)
 (* Below this point is parser code that YOU DO NOT NEED TO TOUCH *)

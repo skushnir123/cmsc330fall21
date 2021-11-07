@@ -1,0 +1,15 @@
+2021-11-01T20:39:46+00:00 wireless-10-105-151-101.umd.edu#01 I: Start test student:0:nfa_accept.
+2021-11-01T20:39:46+00:00 wireless-10-105-151-101.umd.edu#01 I: Test student:0:nfa_accept is successful.
+2021-11-01T20:39:46+00:00 wireless-10-105-151-101.umd.edu#01 I: End test student:0:nfa_accept.
+2021-11-01T20:39:46+00:00 wireless-10-105-151-101.umd.edu#01 I: Start test student:2:nfa_move.
+2021-11-01T20:39:46+00:00 wireless-10-105-151-101.umd.edu#01 I: Test student:2:nfa_move is successful.
+2021-11-01T20:39:46+00:00 wireless-10-105-151-101.umd.edu#01 I: End test student:2:nfa_move.
+2021-11-01T20:39:46+00:00 wireless-10-105-151-101.umd.edu#01 I: Start test student:3:nfa_to_dfa.
+2021-11-01T20:39:46+00:00 wireless-10-105-151-101.umd.edu#01 I: Test student:3:nfa_to_dfa is successful.
+2021-11-01T20:39:46+00:00 wireless-10-105-151-101.umd.edu#01 I: End test student:3:nfa_to_dfa.
+2021-11-01T20:39:46+00:00 wireless-10-105-151-101.umd.edu#01 I: Start test student:6:nfa_new_states.
+2021-11-01T20:39:46+00:00 wireless-10-105-151-101.umd.edu#01 I: Test student:6:nfa_new_states is successful.
+2021-11-01T20:39:46+00:00 wireless-10-105-151-101.umd.edu#01 I: End test student:6:nfa_new_states.
+2021-11-01T20:39:46+00:00 wireless-10-105-151-101.umd.edu#01 I: Start test student:8:nfa_new_finals.
+2021-11-01T20:39:46+00:00 wireless-10-105-151-101.umd.edu#01 I: Test student:8:nfa_new_finals is successful.
+2021-11-01T20:39:46+00:00 wireless-10-105-151-101.umd.edu#01 I: End test student:8:nfa_new_finals.

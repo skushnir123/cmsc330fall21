@@ -1,0 +1,15 @@
+2021-11-01T20:39:46+00:00 wireless-10-105-151-101.umd.edu#02 I: Start test student:1:nfa_closure.
+2021-11-01T20:39:46+00:00 wireless-10-105-151-101.umd.edu#02 I: Test student:1:nfa_closure is successful.
+2021-11-01T20:39:46+00:00 wireless-10-105-151-101.umd.edu#02 I: End test student:1:nfa_closure.
+2021-11-01T20:39:46+00:00 wireless-10-105-151-101.umd.edu#02 I: Start test student:4:re_to_nfa.
+2021-11-01T20:39:46+00:00 wireless-10-105-151-101.umd.edu#02 I: Test student:4:re_to_nfa is successful.
+2021-11-01T20:39:46+00:00 wireless-10-105-151-101.umd.edu#02 I: End test student:4:re_to_nfa.
+2021-11-01T20:39:46+00:00 wireless-10-105-151-101.umd.edu#02 I: Start test student:5:str_to_nfa.
+2021-11-01T20:39:46+00:00 wireless-10-105-151-101.umd.edu#02 I: Test student:5:str_to_nfa is successful.
+2021-11-01T20:39:46+00:00 wireless-10-105-151-101.umd.edu#02 I: End test student:5:str_to_nfa.
+2021-11-01T20:39:46+00:00 wireless-10-105-151-101.umd.edu#02 I: Start test student:7:nfa_new_trans.
+2021-11-01T20:39:46+00:00 wireless-10-105-151-101.umd.edu#02 I: Test student:7:nfa_new_trans is successful.
+2021-11-01T20:39:46+00:00 wireless-10-105-151-101.umd.edu#02 I: End test student:7:nfa_new_trans.
+2021-11-01T20:39:46+00:00 wireless-10-105-151-101.umd.edu#02 I: Start test student:9:regex_to_nfa.
+2021-11-01T20:39:46+00:00 wireless-10-105-151-101.umd.edu#02 I: Test student:9:regex_to_nfa is successful.
+2021-11-01T20:39:46+00:00 wireless-10-105-151-101.umd.edu#02 I: End test student:9:regex_to_nfa.

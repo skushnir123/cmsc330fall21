@@ -1,0 +1,136 @@
+# dune runtest -f
+# OCAMLPARAM: unset
+# Workspace root: /Users/samuelkushnir/Documents/GitHub/cmsc330fall21/project3
+$ /usr/bin/getconf _NPROCESSORS_ONLN > /var/folders/x_/r_8sl_p153g1tcqbh0rvv14w0000gn/T/dune95109c.output 2> /dev/null
+# Auto-detected concurrency: 8
+# disable binary cache
+$ /Users/samuelkushnir/.opam/4.11.0/bin/ocamlc.opt -config > /var/folders/x_/r_8sl_p153g1tcqbh0rvv14w0000gn/T/dune4a9efe.output
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dyn
+#  ; merlin = true
+#  ; for_host = None
+#  ; fdo_target_exe = None
+#  ; build_dir = "default"
+#  ; toplevel_path =
+#      Some External "/Users/samuelkushnir/.opam/4.11.0/lib/toplevel"
+#  ; ocaml_bin = External "/Users/samuelkushnir/.opam/4.11.0/bin"
+#  ; ocaml = Ok External "/Users/samuelkushnir/.opam/4.11.0/bin/ocaml"
+#  ; ocamlc = External "/Users/samuelkushnir/.opam/4.11.0/bin/ocamlc.opt"
+#  ; ocamlopt =
+#      Ok External "/Users/samuelkushnir/.opam/4.11.0/bin/ocamlopt.opt"
+#  ; ocamldep =
+#      Ok External "/Users/samuelkushnir/.opam/4.11.0/bin/ocamldep.opt"
+#  ; ocamlmklib =
+#      Ok External "/Users/samuelkushnir/.opam/4.11.0/bin/ocamlmklib.opt"
+#  ; env =
+#      map
+#        { "DUNE_OCAML_HARDCODED" : "/Users/samuelkushnir/.opam/4.11.0/lib"
+#        ; "DUNE_OCAML_STDLIB" : "/Users/samuelkushnir/.opam/4.11.0/lib/ocaml"
+#        ; "DUNE_SOURCEROOT" :
+#            "/Users/samuelkushnir/Documents/GitHub/cmsc330fall21/project3"
+#        ; "INSIDE_DUNE" :
+#            "/Users/samuelkushnir/Documents/GitHub/cmsc330fall21/project3/_build/default"
+#        ; "MANPATH" :
+#            "/Users/samuelkushnir/Documents/GitHub/cmsc330fall21/project3/_build/install/default/bin"
+#        ; "OCAMLFIND_IGNORE_DUPS_IN" :
+#            "/Users/samuelkushnir/Documents/GitHub/cmsc330fall21/project3/_build/install/default/lib"
+#        ; "OCAMLTOP_INCLUDE_PATH" :
+#            "/Users/samuelkushnir/Documents/GitHub/cmsc330fall21/project3/_build/install/default/lib/toplevel"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        }
+#  ; findlib_path =
+#      [ External
+#          "/Users/samuelkushnir/Documents/GitHub/cmsc330fall21/project3/dep"
+#      ; External "/Users/samuelkushnir/.opam/4.11.0/lib"
+#      ]
+#  ; arch_sixtyfour = true
+#  ; natdynlink_supported = true
+#  ; supports_shared_libraries = true
+#  ; ocaml_config =
+#      { version = "4.11.0"
+#      ; standard_library_default =
+#          "/Users/samuelkushnir/.opam/4.11.0/lib/ocaml"
+#      ; standard_library = "/Users/samuelkushnir/.opam/4.11.0/lib/ocaml"
+#      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
+#      ; ccomp_type = "cc"
+#      ; c_compiler = "cc"
+#      ; ocamlc_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv" ]
+#      ; ocamlc_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+#      ; ocamlopt_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv" ]
+#      ; ocamlopt_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+#      ; bytecomp_c_compiler =
+#          [ "cc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; bytecomp_c_libraries = [ "-lm"; "-lpthread" ]
+#      ; native_c_compiler =
+#          [ "cc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; native_c_libraries = [ "-lm" ]
+#      ; cc_profile = []
+#      ; architecture = "amd64"
+#      ; model = "default"
+#      ; int_size = 63
+#      ; word_size = 64
+#      ; system = "macosx"
+#      ; asm = [ "clang"; "-arch"; "x86_64"; "-Wno-trigraphs"; "-c" ]
+#      ; asm_cfi_supported = true
+#      ; with_frame_pointers = false
+#      ; ext_exe = ""
+#      ; ext_obj = ".o"
+#      ; ext_asm = ".s"
+#      ; ext_lib = ".a"
+#      ; ext_dll = ".so"
+#      ; os_type = "Unix"
+#      ; default_executable_name = "a.out"
+#      ; systhread_supported = true
+#      ; host = "x86_64-apple-darwin19.6.0"
+#      ; target = "x86_64-apple-darwin19.6.0"
+#      ; profiling = false
+#      ; flambda = false
+#      ; spacetime = false
+#      ; safe_string = true
+#      ; exec_magic_number = "Caml1999X028"
+#      ; cmi_magic_number = "Caml1999I028"
+#      ; cmo_magic_number = "Caml1999O028"
+#      ; cma_magic_number = "Caml1999A028"
+#      ; cmx_magic_number = "Caml1999Y028"
+#      ; cmxa_magic_number = "Caml1999Z028"
+#      ; ast_impl_magic_number = "Caml1999M028"
+#      ; ast_intf_magic_number = "Caml1999N028"
+#      ; cmxs_magic_number = "Caml1999D028"
+#      ; cmt_magic_number = "Caml1999T028"
+#      ; natdynlink_supported = true
+#      ; supports_shared_libraries = true
+#      ; windows_unicode = false
+#      }
+#  }
+$ (cd _build/default && /Users/samuelkushnir/.opam/4.11.0/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I test/student/.student.eobjs/byte -I /Users/samuelkushnir/.opam/4.11.0/lib/bytes -I /Users/samuelkushnir/.opam/4.11.0/lib/oUnit -I /Users/samuelkushnir/.opam/4.11.0/lib/ounit2 -I /Users/samuelkushnir/.opam/4.11.0/lib/ounit2/advanced -I /Users/samuelkushnir/.opam/4.11.0/lib/stdlib-shims -I src/.p3.objs/byte -I test/.testUtils.objs/byte -no-alias-deps -opaque -o test/student/.student.eobjs/byte/dune__exe__Student.cmo -c -impl test/student/student.ml)
+$ (cd _build/default/test/public && ./public.exe)
+> ..........
+> Ran: 10 tests in: 0.11 seconds.
+> OK
+$ (cd _build/default && /Users/samuelkushnir/.opam/4.11.0/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I test/student/.student.eobjs/byte -I test/student/.student.eobjs/native -I /Users/samuelkushnir/.opam/4.11.0/lib/bytes -I /Users/samuelkushnir/.opam/4.11.0/lib/oUnit -I /Users/samuelkushnir/.opam/4.11.0/lib/ounit2 -I /Users/samuelkushnir/.opam/4.11.0/lib/ounit2/advanced -I /Users/samuelkushnir/.opam/4.11.0/lib/stdlib-shims -I src/.p3.objs/byte -I src/.p3.objs/native -I test/.testUtils.objs/byte -I test/.testUtils.objs/native -intf-suffix .ml -no-alias-deps -opaque -o test/student/.student.eobjs/native/dune__exe__Student.cmx -c -impl test/student/student.ml)
+$ (cd _build/default && /Users/samuelkushnir/.opam/4.11.0/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -o test/student/student.exe /Users/samuelkushnir/.opam/4.11.0/lib/ocaml/str.cmxa -I /Users/samuelkushnir/.opam/4.11.0/lib/ocaml src/p3.cmxa /Users/samuelkushnir/.opam/4.11.0/lib/ocaml/unix.cmxa -I /Users/samuelkushnir/.opam/4.11.0/lib/ocaml /Users/samuelkushnir/.opam/4.11.0/lib/stdlib-shims/stdlib_shims.cmxa /Users/samuelkushnir/.opam/4.11.0/lib/ounit2/advanced/oUnitAdvanced.cmxa /Users/samuelkushnir/.opam/4.11.0/lib/ounit2/oUnit.cmxa test/testUtils.cmxa test/student/.student.eobjs/native/dune__exe__Student.cmx)
+$ (cd _build/default/test/student && ./student.exe)
+> ..........
+> Ran: 10 tests in: 0.11 seconds.
+> OK
+$ (cd _build/default/test/pbt && ./pbt.exe)
+>  seed: 247433323
+> generated error fail pass / total     time test name
+> ✓]  100    0    0  100 /  100     1.1s regex_to_nfa_accept
+> ================================================================================
+> success (ran 1 tests)
